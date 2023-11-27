@@ -1,15 +1,15 @@
-c - East River Express - 3.5 - blue, black
-c - Paradise Express - 4 - green, blue, black
-c - Teocali Lift - 4 - green, blue
+c - East River Express - 3.5 - blue and black
+c - Paradise Express - 4 - green, blue, and black
+c - Teocali Lift - 4 - green and blue
 o - Red Lady Express - 4 - green
-c - Silver Queen Express - 4 - blue, black, double black
-c - West Wall Lift - 4 - green, blue
+c - Silver Queen Express - 4 - blue, black, and double black
+c - West Wall Lift - 4 - green and blue
 o - Aspen Carpet - 4 - green
 c - Pine Carpet - 4 - green
 c - Spruce Carpet - 4 - green
 c - High Lift T-Bar - 3.5 - double black
-o - Peachtree Lift - 4 - green, blue
-c - North Face Lift T-Bar - 3 - blue, double black
-c - Gold Link Lifts - 4 - blue
+o - Peachtree Lift - 4 - green and blue
+c - North Face Lift T-Bar - 3 - blue and double black
+c - Gold Link Lift - 4 - blue
 c - Painter Boy Lift - 4 - green
-c - Prospect Lift - 4 - green, blue
+c - Prospect Lift - 4 - green and blue
