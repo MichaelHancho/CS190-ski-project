@@ -1,10 +1,20 @@
 from tkinter import*#started at 3:20 pm on 11/27/23 by KD stopped at 5:20 pm for a total of 2 hrs
-import random 
+import random #11-12 am on 11/29/23 by KD 1 hr
+import time
 
 root=Tk()
 
+curr = time.localtime()  #current equals localtime() output
+curr = time.asctime(curr)
+time_day=Label(root,text=" ")
+time_day.grid(row=7,column=1)
 
-
+def time_o_day():#updates time
+    curr = time.localtime()  #current equals localtime() output
+    curr = time.asctime(curr)
+    time_day.config(text=str(curr))
+    root.after(1000,time_o_day)
+root.after(1000,time_o_day)
 def show():
     resort='CB.txt'
     
@@ -111,6 +121,21 @@ def rand_DB():
     
 Button(root, text='Find me a lift that serves Double-Blacks!', command=rand_DB).grid(row=3,column=3)
 
+def food():
+    food_list=[]
+    with open('CB.txt') as f:
+        for line in f:
+            line = line.strip('\n')
+            infolist=line.split(' - ')
+            if 'food' in infolist[3]:
+                liftname=infolist[1]
+                food_list.append(liftname)
+            else:
+                continue
+    food=random.choice(food_list)
+    random_lift.config(text='Get some food on the ' + food + '.')
+    
+Button(root,text='Find me some food!',command=food).grid(row=3,column=4)
 
 
 
