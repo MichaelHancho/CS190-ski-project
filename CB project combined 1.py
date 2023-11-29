@@ -60,23 +60,6 @@ def pickResort():  #MH
     resort += ".txt"
     return resortIn
 
-## MH worked 1 hour to create liftStatus grid
-def liftStatusGrid():  #MH
-    if len(openlifts) > len(closedlifts):
-        gridNum = len(openlifts)
-    else:
-        gridNum = len(closedlifts)
-    for i in range(gridNum):
-        Label(root,text="open").grid(row = 0,column = 0)
-        Label(root,text="closed").grid(row =0,column = 2)
-        if i >= len(openlifts):
-            Label(root,text="").grid(row = i+1,column = 0)
-        else:
-            Label(root,text=openlifts[i],bg='DarkOliveGreen1').grid(row = i+1,column = 0)
-            Button(root, text="O").grid(row=i+1, column=1)
-        Label(root,text=closedlifts[i], bg='salmon1').grid(row = i+1,column = 2)
-        Button(root,text="O").grid(row=i+1, column=3)
-
 ##
 def show():
     resort='CB.txt'
@@ -107,8 +90,6 @@ def rand_green():
                 continue
     green=random.choice(green_list)
     random_lift.config(text='Take a lap on the ' + green + '.')
-    
-Button(root, text='Find me a lift that serves greens!', command=rand_green).grid(row=18,column=0)
 
 def rand_blue():
     blue_list=[]
@@ -125,8 +106,6 @@ def rand_blue():
     blue=random.choice(blue_list)
     random_lift.config(text='Take a lap on the ' + blue + '.')
 
-Button(root,text='Find me a lift that serves blues!', command=rand_blue).grid(row=18,column=2)
-
 def rand_black():
     black_list=[]
     with open('CB.txt') as f:
@@ -142,8 +121,6 @@ def rand_black():
     black=random.choice(black_list)
     random_lift.config(text='Take a lap on the ' + black + '.')
     
-Button(root,text='Find me a lift that serves blacks!', command=rand_black).grid(row=18,column=3)
-
 def rand_DB():
     DB_list=[]
     with open('CB.txt') as f:
@@ -155,8 +132,56 @@ def rand_DB():
                 DB_list.append(liftname)
             else:
                 continue
-            
-Button(root, text='Find me a lift that serves Double-Blacks!', command=rand_DB).grid(row=18,column=4)
+    print(DB_list)
+    DB=random.choice(DB_list)
+    random_lift.config(text='Take a lap on the ' + DB + '.')
+
+## MH worked 1 hour to create liftStatus grid
+def liftStatusGrid():  #MH
+    if len(openlifts) > len(closedlifts):
+        gridNum = len(openlifts)
+    else:
+        gridNum = len(closedlifts)
+    for i in range(gridNum):
+        Label(root,text="open").grid(row = 0,column = 0)
+        Label(root,text="closed").grid(row =0,column = 1)
+        if i >= len(openlifts):
+            Label(root,text="").grid(row = i+1,column = 0)
+        else:
+            Label(root,text=openlifts[i],bg='DarkOliveGreen1').grid(row = i+1,column = 0)
+            #Button(root, text="O").grid(row=i+1, column=1)
+        Label(root,text=closedlifts[i], bg='salmon1').grid(row = i+1,column = 1)
+        #Button(root,text="O").grid(row=i+1, column=3)
+    return gridNum
+
+
+## MH 1 hour on file programinng
+resort = 'CB.txt'  #temporary
+with open(resort) as f:  #MH
+    openlifts = []  #open lifts
+    closedlifts = []  #lifts not open for the season
+    liftmaint = []  #lifts down for maintanance
+    for line in f:
+        line = line.strip("\n")
+        linelist = line.split(" - ")
+        if linelist[0] == 'c':
+            closedlifts.append([linelist[1]])
+        elif linelist[0] == 'm':
+            liftmaint.append([linelist[1]])
+        else:
+            #status = timeReader(linelist[2], time)
+            openlifts.append([linelist[1]])
+print("open lifts: ", openlifts)
+print("not running", closedlifts)
+
+canvas = Canvas(root)
+gridHeight = liftStatusGrid()
+print(gridHeight)
+
+Button(root, text='Find me a lift that serves greens!', command=rand_green).grid(row=gridHeight + 4,column=0)
+Button(root,text='Find me a lift that serves blues!', command=rand_blue).grid(row=gridHeight + 4,column=2)
+Button(root,text='Find me a lift that serves blacks!', command=rand_black).grid(row=gridHeight + 4,column=3)
+Button(root, text='Find me a lift that serves Double-Blacks!', command=rand_DB).grid(row=gridHeight + 4,column=4)
 ##
 
 #time MH
@@ -185,28 +210,5 @@ label=Label( root, text = ' ')
 label.grid(row=2,column=6)
 random_lift=Label(root, text = ' ')
 random_lift.grid(row=4,column=6)
-
-resort = 'CB.txt'  #temporary
-
-## MH 1 hour on file programinng
-with open(resort) as f:  #MH
-    openlifts = []  #open lifts
-    closedlifts = []  #lifts not open for the season
-    liftmaint = []  #lifts down for maintanance
-    for line in f:
-        line = line.strip("\n")
-        linelist = line.split(" - ")
-        if linelist[0] == 'c':
-            closedlifts.append([linelist[1]])
-        elif linelist[0] == 'm':
-            liftmaint.append([linelist[1]])
-        else:
-            status = timeReader(linelist[2], time)
-            openlifts.append([linelist[1]])
-print("open lifts: ", openlifts)
-print("not running", closedlifts)
-
-canvas = Canvas(root)
-liftStatusGrid()
 
 root.mainloop()
