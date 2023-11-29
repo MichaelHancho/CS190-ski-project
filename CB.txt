@@ -2,8 +2,8 @@ c - East River Express - 3.5 - blue and black
 c - Paradise Express - 4 - green, blue, black, and food
 c - Teocali Lift - 4 - green and blue
 o - Red Lady Express - 4 - green and food
-c - Silver Queen Express - 4 - blue, black, and double-black
-c - West Wall Lift - 4 - green and blue
+c - Silver Queen Express - 4 - blue, black, double-black, and food
+c - West Wall Lift - 4 - green, blue, and food
 o - Aspen Carpet - 4 - green
 c - Pine Carpet - 4 - green
 c - Spruce Carpet - 4 - green
