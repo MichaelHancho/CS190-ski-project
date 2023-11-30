@@ -1,8 +1,21 @@
-import time
-import random 
 from tkinter import *
+import random
+import time 
+
 
 root = Tk()
+
+current=time.localtime()
+current=time.asctime(current)
+time_day=Label(root,text=' ')
+time_day.grid(row=0,column=2)
+
+def time_o_day():
+    current=time.localtime()
+    current=time.asctime(current)
+    time_day.config(text=str(current))
+    root.after(1000,time_o_day)
+root.after(1,time_o_day)
 
 ##MH worked 3 hours to create current time, first 5 functions, and the first version of CB.txt
 def timeReader(liftHours, time1):  #MH
@@ -182,6 +195,9 @@ Button(root, text='Find me a lift that serves greens!', command=rand_green).grid
 Button(root,text='Find me a lift that serves blues!', command=rand_blue).grid(row=gridHeight + 4,column=2)
 Button(root,text='Find me a lift that serves blacks!', command=rand_black).grid(row=gridHeight + 4,column=3)
 Button(root, text='Find me a lift that serves Double-Blacks!', command=rand_DB).grid(row=gridHeight + 4,column=4)
+
+
+
 ##
 
 #time MH
@@ -210,5 +226,24 @@ label=Label( root, text = ' ')
 label.grid(row=2,column=6)
 random_lift=Label(root, text = ' ')
 random_lift.grid(row=4,column=6)
+
+def food():
+    food_list=[]
+    with open('CB.txt') as f:
+        for line in f:
+            line = line.strip('\n')
+            infolist=line.split(' - ')
+            if 'food' in infolist[3]:
+                liftname=infolist[1]
+                food_list.append(liftname)
+            else:
+                continue
+    food=random.choice(food_list)
+    random_lift.config(text='Get some food on the ' + food + '.')
+    
+Button(root,text='Find me some food!',command=food).grid(row=gridHeight+4,column=5)
+
+
+
 
 root.mainloop()
