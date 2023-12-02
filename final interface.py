@@ -1,6 +1,9 @@
 from tkinter import*#started at 3:20 pm on 11/27/23 by KD stopped at 5:20 pm for a total of 2 hrs
 import random #11-12 am on 11/29/23 by KD 1 hr
 import time#6:30 on 11/29/23 finished at 8:30, 2hrs KD
+#11:00 to 12:00 on 12/1/23 1 hr KD
+# 8:00 pm on 12/1/23 KD finished at 10:00 pm total 2 hrs
+#total Hrs=8 by KD
 
 root=Tk()
 
