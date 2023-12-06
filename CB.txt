@@ -1,15 +1,15 @@
-c - East River Express - 3.5 - blue and black
-o - Paradise Express - 4 - green, blue, black, and food
-o - Teocali Lift - 4 - green and blue
-o - Red Lady Express - 4 - green and food
-c - Silver Queen Express - 4 - blue, black, double-black, and food
-c - West Wall Lift - 4 - green, blue, and food
-o - Aspen Carpet - 4 - green
-c - Pine Carpet - 4 - green
-c - Spruce Carpet - 4 - green
-c - High Lift T-Bar - 3.5 - double-black
-o - Peachtree Lift - 4 - green and blue
-c - North Face Lift T-Bar - 3 - blue and double-black
-c - Gold Link Lift - 4 - blue and food
-c - Painter Boy Lift - 4 - green and food
-c - Prospect Lift - 4 - green, blue, and food
+c - East River Express - 3.5 - blue and black - n 
+o - Paradise Express - 4 - green, blue, and black - food
+o - Teocali Lift - 4 - green and blue - n
+o - Red Lady Express - 4 - green and food - n
+c - Silver Queen Express - 4 - blue, black, and DB - food
+c - West Wall Lift - 4 - green, blue - food - n 
+o - Aspen Carpet - 4 - green - n 
+c - Pine Carpet - 4 - green - n
+c - Spruce Carpet - 4 - green - n
+c - High Lift T-Bar - 3.5 - DB - n
+o - Peachtree Lift - 4 - green and blue - n
+c - North Face Lift T-Bar - 3 - blue and DB - n
+c - Gold Link Lift - 4 - blue - food - n
+c - Painter Boy Lift - 4 - green - food - n
+c - Prospect Lift - 4 - green and blue, - food
