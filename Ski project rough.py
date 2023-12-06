@@ -420,17 +420,14 @@ def ski_quiver(event): #coded by KD
     return quiver
 
 root.bind('<Return>',ski_quiver)
-SkiOfDay=Entry(root)
+SkiOfDay=Label(root,text='')
 SkiOfDay.grid(row=14,column=3)
 Label(root,text='Ski of the day').grid(row=14,column=2)
 
 def ski_picker(): #coded by KD
     global quiver
-    ski_val2=str(SkiOfDay.get())
-    leng2=len(ski_val2)
-    skis.delete(0,str(leng2))
     ski_of_the_day=random.choice(quiver)
-    SkiOfDay.insert(0,str(ski_of_the_day))
+    SkiOfDay.config(text=str(ski_of_the_day))
     
 Button(root,text='Pick My Skis!',command=ski_picker).grid(row=13,column=4)
 
@@ -522,4 +519,5 @@ root.mainloop()
 #11:00 to 12:00 on 12/1/23 1 hr KD
 #8:00 pm on 12/1/23 KD finished at 10:00 pm total 2 hrs
 #11:00 am to 12:00 pm on 12/4/23 by KD for 1 hr
-#total Hrs=9 by KD
+#5:00 pm to 6:00 pm by KD 1 HR (debugged original Pre snowflake program)  
+#total Hrs=10 by KD
